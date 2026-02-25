@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -17,31 +18,29 @@
 
     <!-- Logo Left -->
     <div class="logo">
+      <a href="#home">
       <img src="StepAhead Biomedical Logo.png" Link="#home" alt="StepAhead_Biomedical_Logo">
+      </a>
     </div>
 
-    <!-- Right side (Social on top, Menu below) -->
-    <div class="right-header">
+    <!-- Mobile Menu Icon -->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
 
-      <!-- Social Icons
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-      </div> -->
-
-      <!-- Menu Links -->
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
     </div>
 
   </div>
 </header>
+<br>
+
+<!----HOME ---->
 
 <section id="home" class="home-hero">
   <!-- LEFT -->
@@ -50,7 +49,6 @@
       <h1>
         Welcome to <span class="brand">StepAhead Biomedical</span>
       </h1>
-
     </h1>
 
     <p class="home-tagline">
@@ -105,8 +103,8 @@
 
 
 
-<!-- SERVICES -->
-<section id="services">
+<!-- Programs -->
+<section id="programs">
   <div class="section-title">
     <h2>Our Training Programs</h2>
     <p class="about-tagline">Industry-relevant, practical, and job-oriented courses</p>
@@ -211,7 +209,7 @@
     <div class="contact-right">
       <h3>Contact Us</h3>
 
-      <form action="https://formspree.io/f/xzdakebd" name="contact" method="POST" data-netlify="true" enctype="multipart/form-data" class="contact-form">
+      <form action="https://formspree.io/f/mdalpqej" name="contact" method="POST" data-netlify="true" enctype="multipart/form-data" class="contact-form">
 
         <input type="hidden" name="form-name" value="contact">
         <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
@@ -237,6 +235,22 @@
 </footer>
 
 <button id="topBtn">↑</button>
+<script>
+  const toggleBtn = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+   const form = document.querySelector(".contact-form");
+
+  form.addEventListener("submit", function () {
+    setTimeout(() => {
+      form.reset();
+    }, 100);
+  });
+</script>
 
 </body>
 
